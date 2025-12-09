@@ -1,0 +1,86 @@
+/* From Uiverse.io by JustCode14 */
+/* Theme Switch */
+
+/* Caja del switch */
+.switch {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  width: 3.3em;
+  height: 1.9em;
+  border-radius: 32px;
+  border: 0.1rem solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ocultar checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #2a2a2a;
+  transition: 0.4s;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  border-radius: 18px;
+  left: 0.45em;
+  bottom: 0.45em;
+  transition: 0.4s;
+  transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
+  box-shadow: inset 6px -3px 0px 0px #fff;
+}
+
+.switch input:checked + .slider {
+  background-color: #00a6ff;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.45em);
+  box-shadow: inset 12px -3px 0px 12px #ffcf48;
+}
+
+/* Estrellas */
+.star {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  transition: all 0.4s;
+}
+
+.star_1 { left: 2em;  top: 0.4em; }
+.star_2 { left: 1.8em; top: 1em; }
+.star_3 { left: 2.5em; top: 0.8em; }
+
+.switch input:checked ~ .slider .star {
+  opacity: 0;
+}
+
+/* Nube */
+.cloud {
+  width: 3em;
+  position: absolute;
+  bottom: -1.1em;
+  left: -1em;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.switch input:checked ~ .slider .cloud {
+  opacity: 1;
+}
