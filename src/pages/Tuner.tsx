@@ -3,7 +3,6 @@ import { Mic, MicOff, Volume2 } from 'lucide-react';
 import * as Tone from 'tone';
 import { usePitchDetection } from '../hooks/usePitchDetection';
 
-// Definición de afinaciones comunes
 const TUNINGS = {
   standard: { name: 'Estándar (E)', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] },
   //dropD: { name: 'D', notes: ['D2', 'A2', 'D3', 'G3', 'B3', 'E4'] },
@@ -14,7 +13,6 @@ const TUNINGS = {
 
 const STRING_POSITIONS = ['6ta', '5ta', '4ta', '3ra', '2da', '1ra'];
 
-// Mapeo de archivos de audio para afinación estándar
 const AUDIO_FILES = [
   '6-E2.wav',  // 6ta cuerda
   '5-A2.wav',  // 5ta cuerda
@@ -36,12 +34,11 @@ function Tuner() {
   // Hook de detección de pitch
   const { isListening, result, startListening, stopListening } = usePitchDetection();
 
-  // Estados derivados del resultado de pitch detection
   const detectedNote = result?.note || '';
   const cents = result?.cents || 0;
   const frequency = result?.frequency || 0;
 
-  // Inicializar players de audio
+  
   useEffect(() => {
     // Crear un player para cada cuerda
     playersRef.current = AUDIO_FILES.map((file) => {
@@ -52,20 +49,18 @@ function Tuner() {
     });
 
     return () => {
-      // Limpiar players al desmontar
       playersRef.current.forEach(player => player.dispose());
     };
   }, []);
 
   const playReferenceSound = async (stringIndex: number) => {
     try {
-      // Inicializar el contexto de audio si es necesario
+      
       await Tone.start();
       
       const player = playersRef.current[stringIndex];
       
       if (player && player.loaded) {
-        // Detener el sonido actual si está reproduciéndose
         if (isPlaying !== null && playersRef.current[isPlaying]) {
           playersRef.current[isPlaying].stop();
         }

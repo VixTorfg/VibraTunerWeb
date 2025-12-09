@@ -264,7 +264,7 @@ function Metronome() {
           </div>
 
 
-            {/* Patrones personalizados */}
+            {/* Patrones personalizados 
             <div className="mt-[2rem] pt-[2rem] border-t-2" style={{ borderColor: 'var(--color-border)' }}>
               <div className="flex items-center justify-between mb-[1rem]">
                 <label className="text-sm font-semibold" style={{ color: 'var(--color-text-muted)' }}>
@@ -287,9 +287,9 @@ function Metronome() {
                 </button>
               </div>
 
-              {/* Lista desplegable de patrones personalizados */}
+              {/* Lista desplegable de patrones personalizados 
               <div className="space-y-[0.5rem]">
-                {/* Placeholder - TODO: mapear patrones personalizados del estado */}
+                {/* Placeholder - TODO: mapear patrones personalizados del estado 
                 <div className="text-center py-[2rem] rounded-[0.5rem]" style={{ backgroundColor: 'var(--color-surface-alt)' }}>
                   <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
                     No hay patrones personalizados aún
@@ -315,9 +315,9 @@ function Metronome() {
                     <button className="p-[0.25rem] hover:opacity-[0.7]">Eliminar</button>
                   </div>
                 </button>
-                */}
+                
               </div>
-            </div>
+            </div>*/}
             
         
       
